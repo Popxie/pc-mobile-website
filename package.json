@@ -1,0 +1,64 @@
+{
+  "name": "pc-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "build:test": "vue-cli-service build --mode test",
+    "build:staging": "cross-env NODE_ENV=staging vue-cli-service build",
+    "build:prod": "vue-cli-service build --mode production",
+    "lint": "vue-cli-service lint",
+    "deploy": "kada-deploy project ./dist",
+    "deploy:test": "cross-env NODE_ENV=test npm run deploy",
+    "deploy:staging": "cross-env NODE_ENV=staging npm run deploy",
+    "deploy:prod": "cross-env NODE_ENV=production npm run deploy",
+    "symlink": "node ./scripts/symlink.js"
+  },
+  "dependencies": {
+    "@kada/kada-rem-layout": "^1.0.8-0",
+    "@kada/library": "^1.2.2",
+    "@kada/static-deploy": "^0.2.3-alpha",
+    "core-js": "^3.8.1",
+    "element-ui": "^2.14.1",
+    "vue": "^2.6.11",
+    "vue-router": "^3.4.9"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "glob": "^7.1.6",
+    "js-yaml": "^3.14.1",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {
+      "no-undef": 1,
+      "no-unused-vars": 1
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
